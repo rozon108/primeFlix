@@ -1,0 +1,183 @@
+:root {
+  --primary-color: #1de302;
+  --background-color: #222;
+  --secondary-color: #279c03;
+  --secondary2-color: #1b5d01;
+  --secondary3-color: #002e06;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: var(--background-color);
+  color: white;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+img {
+  width: 100%;
+}
+section:not(.top-header) {
+    
+  border-bottom: 0rem solid var(--secondary3-color);
+}
+.mFlix-container {
+  /* This is similar to Bootsrap .container css property 
+            this gives equaly space to left and right makeing out content look centered*/
+  max-width: 96%;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+/* Landing Page */
+
+.showcase-top {
+  position: relative;
+  height: 60px;
+  background-color: var(--secondary2-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.showcase-top img {
+  width: 85px;
+}
+
+.nav_links li {
+  display: inline-block;
+  margin: 0 0.3rem;
+}
+
+/* .showcase-top .user{
+    transform: scale(2);
+} */
+
+/* Content */
+
+/* Top Slider */
+.top-slider {
+    height: auto;
+}
+.top-slider div{
+    height: auto;
+}
+.top-slider div img{
+    object-fit: cover;
+}
+/* end of top slider */
+.movie-collection{
+    margin-top: 1.2rem;
+}
+
+.some-container{
+    margin-top: 0.4rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.movie-box img{
+    width: 290px;
+    height: 165px;
+}
+/* end of Content */
+
+
+/* Footer */
+
+footer {
+  padding-top: 2rem !important;
+  text-align: center;
+  font-size: 1rem;
+  color: #999;
+}
+footer ul li{
+    display: inline-block;
+    margin: 0 0.5rem;
+} 
+footer ul{
+    margin-bottom: 2rem;
+}
+.footer-img-box{
+    width: 50%;
+    margin:auto;
+    text-align: center;
+}
+footer img{
+    width: 90px;
+}
+/* --End OF FOOTER */
+
+/* Custom Css like bootstrap */
+/* text style */
+.ourText-xl {
+  font-size: 1.8rem;
+}
+.ourText-md {
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  color: #fff;
+}
+.ourText-dark {
+  color: #999;
+}
+
+/* Our Button */
+.bton {
+  display: inline-block;
+  background: var(--secondary-color);
+  color: white;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  outline: none;
+  box-shadow: 0 1px 0 rgba(0, 0, 0 0.45);
+  border-radius: 5px;
+}
+.bton:hover {
+  opacity: 0.9;
+}
+.bton-rounded {
+  border-radius: 9px;
+}
+.bton-xl {
+  font-size: 1.25rem;
+  padding: 0.5rem 1.5rem;
+  text-transform: uppercase;
+}
+.bton-lg {
+  font-size: 1rem;
+  padding: 0.8rem 2.1rem;
+  text-transform: uppercase;
+}
+/* End of CSS Custom Style */

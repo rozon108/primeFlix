@@ -1,0 +1,32 @@
+<%- include('partials/header') %>
+
+<!-- Sliding scroll Movie explorer -->
+<div class="topRatedMovie-container border border-dark border-5 my-5">
+  <heading class="h2">Top Rated</heading>
+  <div class="topRatedMovie-container--wrapper m-3">
+    <% topRateList.forEach( movie=>{ %>
+    <div class="box-img mx-1">
+      <img src="<%= movie.poster %>" />
+    </div>
+    <div class="movie-info ">
+      <span class="text-muted"><%= movie.year%></span>
+      <span class="float-end"><%= movie.imdb.rating%> ⭐️</span>
+    </div>
+
+    <% }) %>
+  </div>
+</div>
+
+<hr />
+<!-- Home Movies -->
+<div class="movie-container mx-5 mt-1">
+  <div class="row row-cols-2 row-cols-sm-2 row-cols-md-5">
+    <%- include('partials/movieCard') %>
+  </div>
+</div>
+
+<br /><br />
+<hr />
+
+
+<%- include('partials/footer') %>
