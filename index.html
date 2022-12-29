@@ -4,141 +4,271 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mFlix</title>
 
     <!-- CSS only -->
-    <!--  Bootsrap
-         <link
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
-    /> -->
-    <link href="style.css" rel="stylesheet" />
+    />
+    <link href="/assets/indexAssets/indexStyle.css" rel="stylesheet" />
 
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <!-- JavaScript Bundle with Popper -->
-    <!-- <script
+    <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
-    ></script> -->
+    ></script>
     <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/f95c23eae3.js"
       crossorigin="anonymous"
     ></script>
+    <title>PrimeFlix</title>
   </head>
   <body>
-    <section class="nav-bar top-header">
-      <div class="showcase-top">
-        <img src="/assets/mFlix-logo.png" alt="" />
-        <ul class="nav_links">
-          <li>Home</li>
-          <li>Store</li>
-          <li>Channels</li>
-          <li>Categories</li>
-          <li>My List</li>
+    <!-- Put below in NavBar.ejs -->
+    <!--
+    <div class="sampleNav h-50 d-flex justify-content-end mt-3 g-2">
+      <div class="h3 me-auto ms-4">mFlix  |   Home</div>
+       🔍 
+      <button
+        type="button"
+        class="btn btn-secondary me-5"
+        data-toggle="tooltip"
+        data-placement="left-end"
+        title="Feature Coming Soon... 🫣"
+      >
+        Login..
+      </button>
+    </div>
+  -->
+
+    <section class="header">
+      <header class="showcase">
+        <div class="showcase-top">
+          <img src="/assets/indexAssets/assets/mFlix-logo.png" class="ourLogo"  alt="" />
+
+          <a
+            href="./primeFlix.html"
+            class="bton"
+            data-toggle="tooltip"
+            data-placement="left-end"
+            title="Feature Coming Soon... 🫣"
+            >Login</a
+          >
+        </div>
+        <div
+          class="showcase-content position-relative m-auto mt-5 text-center d-flex flex-column justify-content-center align-items-center"
+        >
+          <h1>Watch movies on PrimeFlix!</h1>
+          <p class="lh-lg fw-bold text-uppercase">
+            Watch upto 1000 movies.. Cancel Anytime
+          </p>
+          <a href="./primeFlix.html" class="bton bton-xl"
+            >Try it for FREE <i class="fa-solid fa-circle-chevron-right"></i
+          ></a>
+        </div>
+      </header>
+    </section>
+
+    <section class="tab">
+      <div class="tab-head">
+        <div class="tab-icons-container mFlix-container">
+          <div id="tab1" class="tab-item">
+            <i class="fa-solid fa-door-open fa-3x"></i>
+            <p>Cancel Anytime</p>
+          </div>
+          <div id="tab2" class="tab-item">
+            <i class="fa-solid fa-tags fa-3x"></i>
+            <p>Pick Your Feature</p>
+          </div>
+          <div id="tab3" class="tab-item tab-active">
+            <div class="mobile-icons d-flex position-relative">
+              <i class="flex-1 fa-solid fa-mobile-screen-button fa-3x"></i>
+              <i
+                class="position-absolute ms-4 mt-2 fa-solid fa-mobile fa-3x"
+              ></i>
+            </div>
+            <p>Watch Anywhere</p>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content">
+        <div class="tab-content-container mFlix-container">
+          <!-- tab1 -->
+          <div id="tab1-content" class="tab-content-item">
+            <div class="tab1-content-inner">
+              <div class="tab-content-heading">
+                <p class="ourText-xl">
+                  If you decide mFix isn't for you - no problem. No commitment.
+                  Cancel online anytime and keep using Free version.
+                </p>
+                <a href="./primeFlix.html" class="bton">Watch for Free</a>
+              </div>
+              <img
+                src="/assets/indexAssets/assets/tab-content/tab-content-1.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <!-- tab2 -->
+          <div id="tab2-content" class="tab-content-item">
+            <div class="tab2-content-heading">
+              <h3 class="tab2-title">
+                Choose one plan and watch everything on mFlix
+              </h3>
+              <a href="./primeFlix.html" ><div class="bton">Watch for FREE!</div></a>
+            </div>
+            <table class="tab-table">
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>FREE</th>
+                  <th>Standard</th>
+                  <th>Premium</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Monthly price</td>
+                  <td>Free</td>
+                  <td>$12.99</td>
+                  <td>$15.99</td>
+                </tr>
+                <tr>
+                  <td>Monthly Store Credit</td>
+                  <td><i class="fas fa-times"></i></td>
+                  <td>1</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>HD Available</td>
+                  <td><i class="fas fa-times"></i></td>
+                  <td><i class="fas fa-check"></i></td>
+                  <td><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                  <td>Ultra HD Available</td>
+                  <td><i class="fas fa-times"></i></td>
+                  <td><i class="fas fa-times"></i></td>
+                  <td><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                  <td>Screens you can watch on at the same time</td>
+                  <td>1</td>
+                  <td>2</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>Watch on your laptop, TV, phone and tablet</td>
+                  <td><i class="fas fa-check"></i></td>
+                  <td><i class="fas fa-check"></i></td>
+                  <td><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                  <td>Unlimited movies and TV shows</td>
+                  <td><i class="fas fa-check"></i></td>
+                  <td><i class="fas fa-check"></i></td>
+                  <td><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                  <td>Cancel anytime</td>
+                  <td><i class="fas fa-check"></i></td>
+                  <td><i class="fas fa-check"></i></td>
+                  <td><i class="fas fa-check"></i></td>
+                </tr>
+                <tr>
+                  <td>First month free</td>
+                  <td><i class="fas fa-check"></i></td>
+                  <td><i class="fas fa-check"></i></td>
+                  <td><i class="fas fa-check"></i></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- tab3 -->
+          <div id="tab3-content" class="tab-content-item active">
+            <div class="tab-content-heading">
+              <p class="ourText-xl">
+                Watch TV shows and movies anytime, anywhere — personalized for
+                you.
+              </p>
+              <a href="#" class="bton">Watch Now -> PrimeFlix.com</a>
+            </div>
+            <div class="tab3-content">
+              <div>
+                <img
+                  src="/assets/indexAssets/assets/tab-content/tab-content-2-1.png"
+                  alt=""
+                />
+                <p class="ourText-md">Watch on your TV</p>
+                <p class="ourText-dark">
+                  Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray
+                  players and more.
+                </p>
+              </div>
+              <div>
+                <img
+                  src="/assets/indexAssets/assets/tab-content/tab-content-2-2.png"
+                  alt=""
+                />
+                <p class="ourText-md">Watch instantly or download for later</p>
+                <p class="ourText-dark">
+                  Available on phone and tablet, wherever you go.
+                </p>
+              </div>
+              <div>
+                <img
+                  src="/assets/indexAssets/assets/tab-content/tab-content-2-3.png"
+                  alt=""
+                />
+                <p class="ourText-md">Use any computer</p>
+                <p class="ourText-dark">Watch Now on primeFlix.com.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+        <div class="footer-img-box">
+            <img src="./assets/mFlix-logo.png" class="ourLogo" alt="" />
+          </div>
+      <div class="footer-cols">
+        <ul>
+          <li><a href="#">Watch NOW!</a></li>
+          <li><a href="#">PrimeFlix Originals</a></li>
         </ul>
-        <a
-          href=""
-          class="user"
-          data-toggle="tooltip"
-          data-placement="left-end"
-          title="Feature Coming Soon... 🫣"
-          ><i class="fa-solid fa-user fa-2x"></i
-        ></a>
+        <ul>
+          <li><a href="#">PrimeFlix Store</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Ways To Watch</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Accounts</a></li>
+          <li><a href="#">About...</a></li>
+        </ul>
       </div>
-    </section>
-    <section class="top-slider">
-      <div class="">
-        <!-- later JS function to auto slide -->
-        <img
-          src="./assets/movie cover/wide-cover/wide-movie-cover1.jpeg"
-          alt=""
-        />
-      </div>
-    </section>
-    <section class="continue-watching movie-collection mFlix-container">
-      <h2>continue-watching</h2>
-      <div class="some-container">
-        <div class="movie-box">
-          <img
-            src="./assets/movie cover/movie-cover/10-movie-cover.jpg"
-            alt=""
-          />
-        </div>
-        <div class="movie-box">
-          <img
-            src="./assets/movie cover/movie-cover/2-movie-cover.jpg"
-            alt=""
-          />
-        </div>
-      </div>
-    </section>
-    <section class="recommened movie-collection mFlix-container">
-      <h2>recommened</h2>
-      <div class="some-container">
-        <div class="movie-box">
-          <img
-            src="./assets/movie cover/movie-cover/3-movie-cover.jpg"
-            alt=""
-          />
-        </div>
-        <div class="movie-box">
-          <img
-            src="./assets/movie cover/movie-cover/4-movie-cover.jpg"
-            alt=""
-          />
-        </div>
-        <div class="movie-box">
-          <img
-            src="./assets/movie cover/movie-cover/5-movie-cover.jpg"
-            alt=""
-          />
-        </div>
-     
-        
-      </div>
-    </section>
-    <section class="top-Rated movie-collection mFlix-container">
-      <h2>Top-Rated</h2>
-      <div class="some-container">
-        <div class="movie-box">
-          <img
-            src="./assets/movie cover/movie-cover/1-movie-cover.jpg"
-            alt=""
-          />
-        </div>
-       
-        <div class="movie-box">
-          <img
-            src="./assets/movie cover/movie-cover/20-movie-cover.jpg"
-            alt=""
-          />
-        </div>
-        <div class="movie-box">
-          <img
-            src="./assets/movie cover/movie-cover/28-movie-cover.jpg"
-            alt=""
-          />
-        </div>
-      </div>
-    </section>
-    
-
-    <footer class="mFlix-container">
-      <div class="footer-img-box">
-        <img src="./assets/mFlix-logo.png" alt="" />
-      </div>
-
-      <ul>
-        <li>Terms and Privacy Notice</li>
-        <li>Send us feedback</li>
-        <li>Help</li>
-        <li>© 2022, rojanTech.com, Inc. or its affiliates</li>
-      </ul>
+      <span>Made by Rojan 2022</span>
+      rojanTech.com
     </footer>
+
+
+
+    <script src="/assets/indexAssets/indexJs.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
   </body>
 </html>

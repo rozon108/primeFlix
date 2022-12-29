@@ -55,6 +55,11 @@ section:not(.top-header) {
   overflow: hidden;
   padding: 0 2rem;
 }
+.ourLogo{
+  transform: scale(2);
+  margin:10px;
+}
+
 /* Landing Page */
 
 .showcase-top {
@@ -113,25 +118,38 @@ section:not(.top-header) {
 /* Footer */
 
 footer {
-  padding-top: 2rem !important;
-  text-align: center;
-  font-size: 1rem;
+  max-width: 85%;
+  margin: 1rem auto;
+  overflow: hidden;
+}
+footer,
+footer a {
+  font-size: 0.9rem;
   color: #999;
 }
-footer ul li{
-    display: inline-block;
-    margin: 0 0.5rem;
-} 
-footer ul{
-    margin-bottom: 2rem;
+
+.footer-cols {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem 1rem;
+  flex-wrap:wrap;
+
 }
+footer li {
+  line-height: 1.9rem;
+}
+.footer-cols ul {
+  width: 7.5rem;
+  padding-left:0;
+}
+
 .footer-img-box{
-    width: 50%;
-    margin:auto;
-    text-align: center;
+  width: 50%;
+  margin:auto;
+  text-align: center;
 }
 footer img{
-    width: 90px;
+  width: 90px;
 }
 /* --End OF FOOTER */
 
