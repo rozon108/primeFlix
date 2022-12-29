@@ -263,6 +263,9 @@ footer li {
 footer img {
   width: 90px;
 }
+.footer-credit{
+  text-align: center;
+}
 /* --End OF FOOTER */
 
 /* Custom Css like bootstrap */
