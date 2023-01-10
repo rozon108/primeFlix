@@ -61,14 +61,18 @@
 
           <select id="filter" onchange="filterMovies(event)">
             <option value="" disabled="" selected="">Sort</option>
+            <option value="ASC">Alphabetically, A to Z</option>
+            <option value="DESC">Alphabetically, Z to A</option>
             <option value="LOW_TO_HIGH">Price, Low to High</option>
             <option value="HIGH_TO_LOW">Price, High to Low</option>
             <option value="RATING">Rating</option>
-            <option value="CREDIT">PrimeFlix Credit Only</option>
+            <option value="LOW_RATING">Rating (DESC)</option>
+        
           </select>
         </div>
-        <div class="movies">
-          <div class="movie">
+        <div class="movies loader">
+            <!-- Sample data -->
+          <!-- <div class="movie">
             <div class="movie-cover">
               <div class="primeCredit">$</div>
               <img
@@ -77,33 +81,20 @@
             </div>
             <!-- <div class="movie__title">
               <span>Sample Title</span>
-            </div> -->
+            </div> 
             <div class="movieDetails">
               <div class="movieYear"><span>2023(Year)</span></div>
               <div class="movieRuntime">
                 180/250
-                <!--Bar // rating
+                Bar // rating
                 width: calc({$runtime}/250*100%);
-                -->
+                
               </div>
             </div>
             <span class="moviePrice">$4.99</span>
-          </div>
+          </div> -->
 
-          <div class="movie">
-            <div class="movie-cover">
-              <div class="primeCredit">$</div>
-              <img
-                src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg"
-              />
-            </div>
-            <!-- <div class="movie__title">
-              <span>Title--The Wolf of Wall Street</span>
-            </div> -->
-            <div class="movie__year"><span>2013(Year)</span></div>
-            <div class="movie__runtime">180/250 //-- Bar // rating</div>
-            <span class="movie__price">$4.99</span>
-          </div>
+         
         </div>
       </div>
     </div>

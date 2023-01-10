@@ -7,27 +7,80 @@ let movies;
 async function renderMovies(filter) {
   //Steps
   //select class that displays the movie and its info
-  
+  const moviesWrapper = document.querySelector(".movies");
   //check if we got any movies data
   //if no show loading logo
+
   //then get movies with await
   //remove loading
+  if (!movies) {
+    movies = await getMovies();
+  }
+  moviesWrapper.classList.remove("loader");
+
   //if we hav sort by low rating or other option
   //code here, we will compare filter with the options
   //now
+  //Sorting the movies
+  if (filter === "ASC") {
+    movies.sort((a, b) => {
+      var textA = a.title.toUpperCase();
+      var textB = b.title.toUpperCase();
+      return textA < textB ? -1 : textA > textB ? 1 : 0;
+    });
+  } else if (filter === "DESC") {
+    movies.sort((a, b) => {
+      var textA = a.title.toUpperCase();
+      var textB = b.title.toUpperCase();
+      return textA < textB ? 1 : textA > textB ? -1 : 0;
+    });
+  } else if (filter === "LOW_TO_HIGH") {
+    movies.sort((a, b) => a.price - b.price);
+  } else if (filter === "HIGH_TO_LOW") {
+    movies.sort((a, b) => b.price - a.price);
+  } else if (filter === "RATING") {
+    movies.sort((a, b) => b.runtime - a.runtime);
+  } else if (filter === "LOW_RATING") {
+    movies.sort((a, b) => a.runtime - b.runtime);
+  }
+
   // map the data from array to html
+  //console.log(movies)
+  const moviesHTML = movies.map((movie) => movieDataHtml(movie)).join("");
+
+  function movieDataHtml(movie) {
+    return `<div class="movie">
+      <div class="movie-cover">
+        <div class="primeCredit">$</div>
+        <img
+          src="${movie.posterUrl}"
+        />
+      </div>
+     <!--<div class="movie__title">
+        <span>${movie.title}</span>
+      </div>--> 
+      <div class="movieDetails">
+        <div class="movieYear"><span>${movie.year}</span></div>
+        <div class="movieRuntime runtimeStatus">
+        <div class="runtimeBar"style="width:calc(${movie.runtime}/250*100%")></div>
+          
+        </div>
+      </div>
+      <span class="moviePrice">$${movie.price}</span>
+    </div>`;
+  }
+
+  moviesWrapper.innerHTML = moviesHTML;
   //end of the function
 }
 //function to show price or if it has discounted/ credit, strike the original and show the credit
 
 //function to show star/ rating, if it not integer display half star
 
-
 //Below to filter movies by rating, price and so on.
 function filterMovies(event) {
   renderMovies(event.target.value);
   console.log("Sorting movies by  " + event.target.value);
-  
 }
 
 setTimeout(() => {
@@ -44,7 +97,7 @@ function getMovies() {
           year: "1984",
           runtime: "229",
           genres: ["Crime", "Drama"],
-          price: "$4.95",
+          price: "4.95",
           primeCredit: false,
           director: "Sergio Leone",
           actors: "Robert De Niro, James Woods, Elizabeth McGovern, Joe Pesci",
@@ -58,7 +111,7 @@ function getMovies() {
           year: "2015",
           runtime: "187",
           genres: ["Crime", "Drama", "Mystery"],
-          price: "$5.5",
+          price: "5.5",
           primeCredit: false,
           director: "Quentin Tarantino",
           actors:
@@ -67,28 +120,14 @@ function getMovies() {
           posterUrl:
             "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA1MTc1NTg5NV5BMl5BanBnXkFtZTgwOTM2MDEzNzE@._V1_SX300.jpg",
         },
-        {
-          id: 23,
-          title: "The Deer Hunter",
-          year: "1978",
-          runtime: "183",
-          genres: ["Drama", "War"],
-          price: "$6.5",
-          primeCredit: false,
-          director: "Michael Cimino",
-          actors:
-            "Robert De Niro, John Cazale, John Savage, Christopher Walken",
-          plot: "An in-depth examination of the ways in which the U.S. Vietnam War impacts and disrupts the lives of people in a small industrial town in Pennsylvania.",
-          posterUrl:
-            "https://images-na.ssl-images-amazon.com/images/M/MV5BMTYzYmRmZTQtYjk2NS00MDdlLTkxMDAtMTE2YTM2ZmNlMTBkXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
-        },
+
         {
           id: 82,
           title: "The Wolf of Wall Street",
           year: "2013",
           runtime: "180",
           genres: ["Biography", "Comedy", "Crime"],
-          price: "$7.25",
+          price: "7.25",
           primeCredit: false,
           director: "Martin Scorsese",
           actors:
@@ -98,26 +137,12 @@ function getMovies() {
             "https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg",
         },
         {
-          id: 72,
-          title: "Casino",
-          year: "1995",
-          runtime: "178",
-          genres: ["Biography", "Crime", "Drama"],
-          price: "$4.5",
-          primeCredit: false,
-          director: "Martin Scorsese",
-          actors: "Robert De Niro, Sharon Stone, Joe Pesci, James Woods",
-          plot: "Greed, deception, money, power, and murder occur between two best friends, a mafia underboss and a casino owner, for a trophy wife over a gambling empire.",
-          posterUrl:
-            "http://ia.media-imdb.com/images/M/MV5BMTcxOWYzNDYtYmM4YS00N2NkLTk0NTAtNjg1ODgwZjAxYzI3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg",
-        },
-        {
           id: 19,
           title: "Scarface",
           year: "1983",
           runtime: "170",
           genres: ["Crime", "Drama"],
-          price: "$6.5",
+          price: "6.5",
           primeCredit: false,
           director: "Brian De Palma",
           actors:
@@ -132,7 +157,7 @@ function getMovies() {
           year: "2007",
           runtime: "169",
           genres: ["Action", "Adventure", "Fantasy"],
-          price: "$5.5",
+          price: "5.5",
           primeCredit: true,
           director: "Gore Verbinski",
           actors: "Johnny Depp, Geoffrey Rush, Orlando Bloom, Keira Knightley",
@@ -146,7 +171,7 @@ function getMovies() {
           year: "2014",
           runtime: "169",
           genres: ["Adventure", "Drama", "Sci-Fi"],
-          price: "$7.75",
+          price: "7.75",
           primeCredit: false,
           director: "Christopher Nolan",
           actors:
@@ -161,7 +186,7 @@ function getMovies() {
           year: "2012",
           runtime: "169",
           genres: ["Adventure", "Fantasy"],
-          price: "$4.5",
+          price: "4.5",
           primeCredit: false,
           director: "Peter Jackson",
           actors: "Ian McKellen, Martin Freeman, Richard Armitage, Ken Stott",
@@ -169,43 +194,13 @@ function getMovies() {
           posterUrl:
             "https://images-na.ssl-images-amazon.com/images/M/MV5BMTcwNTE4MTUxMl5BMl5BanBnXkFtZTcwMDIyODM4OA@@._V1_SX300.jpg",
         },
-
-        {
-          id: 128,
-          title: "Troy",
-          year: "2004",
-          runtime: "163",
-          genres: ["Adventure"],
-          price: "$3.95",
-          primeCredit: false,
-          director: "Wolfgang Petersen",
-          actors: "Julian Glover, Brian Cox, Nathan Jones, Adoni Maropis",
-          plot: "An adaptation of Homer's great epic, the film follows the assault on Troy by the united Greek forces and chronicles the fates of the men involved.",
-          posterUrl:
-            "http://ia.media-imdb.com/images/M/MV5BMTk5MzU1MDMwMF5BMl5BanBnXkFtZTcwNjczODMzMw@@._V1_SX300.jpg",
-        },
-
-        {
-          id: 39,
-          title: "Les Misérables",
-          year: "2012",
-          runtime: "158",
-          genres: ["Drama", "Musical", "Romance"],
-          price: "$4.95",
-          primeCredit: false,
-          director: "Tom Hooper",
-          actors: "Hugh Jackman, Russell Crowe, Anne Hathaway, Amanda Seyfried",
-          plot: "In 19th-century France, Jean Valjean, who for decades has been hunted by the ruthless policeman Javert after breaking parole, agrees to care for a factory worker's daughter. The decision changes their lives forever.",
-          posterUrl:
-            "http://ia.media-imdb.com/images/M/MV5BMTQ4NDI3NDg4M15BMl5BanBnXkFtZTcwMjY5OTI1OA@@._V1_SX300.jpg",
-        },
         {
           id: 69,
           title: "American Gangster",
           year: "2007",
           runtime: "157",
           genres: ["Biography", "Crime", "Drama"],
-          price: "$5.25",
+          price: "5.25",
           primeCredit: false,
           director: "Ridley Scott",
           actors:
@@ -221,7 +216,7 @@ function getMovies() {
           year: "1994",
           runtime: "154",
           genres: ["Crime", "Drama"],
-          price: "$7.5",
+          price: "7.5",
           primeCredit: true,
           director: "Quentin Tarantino",
           actors: "Tim Roth, Amanda Plummer, Laura Lovelace, John Travolta",
@@ -229,29 +224,13 @@ function getMovies() {
           posterUrl:
             "https://images-na.ssl-images-amazon.com/images/M/MV5BMTkxMTA5OTAzMl5BMl5BanBnXkFtZTgwNjA5MDc3NjE@._V1_SX300.jpg",
         },
-
-        {
-          id: 66,
-          title: "The Pianist",
-          year: "2002",
-          runtime: "150",
-          genres: ["Biography", "Drama", "War"],
-          price: "$6.5",
-          primeCredit: true,
-          director: "Roman Polanski",
-          actors: "Adrien Brody, Emilia Fox, Michal Zebrowski, Ed Stoppard",
-          plot: "A Polish Jewish musician struggles to survive the destruction of the Warsaw ghetto of World War II.",
-          posterUrl:
-            "http://ia.media-imdb.com/images/M/MV5BMTc4OTkyOTA3OF5BMl5BanBnXkFtZTYwMDIxNjk5._V1_SX300.jpg",
-        },
-
         {
           id: 22,
           title: "Inception",
           year: "2010",
           runtime: "148",
           genres: ["Action", "Adventure", "Sci-Fi"],
-          price: "$6.5",
+          price: "6.5",
           primeCredit: false,
           director: "Christopher Nolan",
           actors:
@@ -261,27 +240,12 @@ function getMovies() {
             "https://images-na.ssl-images-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
         },
         {
-          id: 37,
-          title: "The Shining",
-          year: "1980",
-          runtime: "146",
-          genres: ["Drama", "Horror"],
-          price: "$6.5",
-          primeCredit: false,
-          director: "Stanley Kubrick",
-          actors:
-            "Jack Nicholson, Shelley Duvall, Danny Lloyd, Scatman Crothers",
-          plot: "A family heads to an isolated hotel for the winter where an evil and spiritual presence influences the father into violence, while his psychic son sees horrific forebodings from the past and of the future.",
-          posterUrl:
-            "http://ia.media-imdb.com/images/M/MV5BODMxMjE3NTA4Ml5BMl5BanBnXkFtZTgwNDc0NTIxMDE@._V1_SX300.jpg",
-        },
-        {
           id: 130,
           title: "The Great Gatsby",
           year: "2013",
           runtime: "143",
           genres: ["Drama", "Romance"],
-          price: "$5.5",
+          price: "5.5",
           primeCredit: false,
           director: "Baz Luhrmann",
           actors: "Lisa Adam, Frank Aldridge, Amitabh Bachchan, Steve Bisley",
@@ -295,37 +259,21 @@ function getMovies() {
           year: "1994",
           runtime: "142",
           genres: ["Crime", "Drama"],
-          price: "$9.5",
+          price: "9.5",
           primeCredit: true,
           director: "Frank Darabont",
           actors: "Tim Robbins, Morgan Freeman, Bob Gunton, William Sadler",
           plot: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
           posterUrl:
-            "https://images-na.ssl-images-amazon.com/images/M/MV5BODU4MjU4NjIwNl5BMl5BanBnXkFtZTgwMDU2MjEyMDE@._V1_SX300.jpg",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnjLOTEKUpMgkq9-y7-3oHgYWkcvYnK1NgvKsqlqC2dCHNhNG7k27PtsQrcxh7nuThVQg&usqp=CAU",
         },
-        {
-          id: 51,
-          title: "Forrest Gump",
-          year: "1994",
-          runtime: "142",
-          genres: ["Comedy", "Drama"],
-          price: "$6.95",
-          primeCredit: true,
-          director: "Robert Zemeckis",
-          actors:
-            "Tom Hanks, Rebecca Williams, Sally Field, Michael Conner Humphreys",
-          plot: "Forrest Gump, while not intelligent, has accidentally been present at many historic moments, but his true love, Jenny Curran, eludes him.",
-          posterUrl:
-            "https://images-na.ssl-images-amazon.com/images/M/MV5BYThjM2MwZGMtMzg3Ny00NGRkLWE4M2EtYTBiNWMzOTY0YTI4XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_SX300.jpg",
-        },
-
         {
           id: 35,
           title: "Shutter Island",
           year: "2010",
           runtime: "138",
           genres: ["Mystery", "Thriller"],
-          price: "$6.5",
+          price: "6.5",
           primeCredit: true,
           director: "Martin Scorsese",
           actors:
@@ -341,7 +289,7 @@ function getMovies() {
           year: "2013",
           runtime: "131",
           genres: ["Action", "Adventure", "Sci-Fi"],
-          price: "$7.8",
+          price: "7.8",
           primeCredit: false,
           director: "Guillermo del Toro",
           actors:
