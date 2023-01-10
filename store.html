@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PrimeFlix</title>
+
+    <!-- CSS only -->
+    <!--  Bootsrap
+         <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    /> -->
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="storeStyle.css" />
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script> -->
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/f95c23eae3.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <section class="nav-bar top-header">
+      <div class="showcase-top">
+        <img src="/assets/mFlix-logo.png" class="ourLogo" alt="" />
+        <ul class="nav_links">
+          <li>Home</li>
+          <li>Store</li>
+          <li>Channels</li>
+          <li>Categories</li>
+          <li>My List</li>
+        </ul>
+        <a
+          href=""
+          class="user"
+          data-toggle="tooltip"
+          data-placement="left-end"
+          title="Feature Coming Soon... 🫣"
+          ><i class="fa-solid fa-user fa-2x"></i
+        ></a>
+      </div>
+    </section>
+    <div class="movie-Container container mFlix-container">
+      <div class="row">
+        <div class="movies__header">
+          <h2 class="section__title movies__header--title">
+            PrimeFlix's Originals
+          </h2>
+
+          <select id="filter" onchange="filterMovies(event)">
+            <option value="" disabled="" selected="">Sort</option>
+            <option value="LOW_TO_HIGH">Price, Low to High</option>
+            <option value="HIGH_TO_LOW">Price, High to Low</option>
+            <option value="RATING">Rating</option>
+            <option value="CREDIT">PrimeFlix Credit Only</option>
+          </select>
+        </div>
+        <div class="movies">
+          <div class="movie">
+            <div class="movie-cover">
+              <div class="primeCredit">$</div>
+              <img
+                src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg"
+              />
+            </div>
+            <!-- <div class="movie__title">
+              <span>Sample Title</span>
+            </div> -->
+            <div class="movieDetails">
+              <div class="movieYear"><span>2023(Year)</span></div>
+              <div class="movieRuntime">
+                180/250
+                <!--Bar // rating
+                width: calc({$runtime}/250*100%);
+                -->
+              </div>
+            </div>
+            <span class="moviePrice">$4.99</span>
+          </div>
+
+          <div class="movie">
+            <div class="movie-cover">
+              <div class="primeCredit">$</div>
+              <img
+                src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg"
+              />
+            </div>
+            <!-- <div class="movie__title">
+              <span>Title--The Wolf of Wall Street</span>
+            </div> -->
+            <div class="movie__year"><span>2013(Year)</span></div>
+            <div class="movie__runtime">180/250 //-- Bar // rating</div>
+            <span class="movie__price">$4.99</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 
+        id: 82,
+          title: "The Wolf of Wall Street",
+          year: "2013",
+          runtime: "180",
+          genres: ["Biography", "Comedy", "Crime"],
+          price: "$7.25",
+          primeCredit: false,
+          director: "Martin Scorsese",
+          actors:
+            "Leonardo DiCaprio, Jonah Hill, Margot Robbie, Matthew McConaughey",
+          plot: "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
+          posterUrl:
+            "https://images-na.ssl-images-amazon.com/images/M/MV5BMjIxMjgxNTk0MF5BMl5BanBnXkFtZTgwNjIyOTg2MDE@._V1_SX300.jpg",
+         -->
+
+    <footer>
+      <div class="footer-img-box">
+        <img src="./assets/mFlix-logo.png" class="ourLogo" alt="" />
+      </div>
+      <div class="footer-cols">
+        <ul>
+          <li><a href="#">Watch NOW!</a></li>
+          <li><a href="#">PrimeFlix Originals</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">PrimeFlix Store</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Ways To Watch</a></li>
+          <li><a href="#">Privacy</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Accounts</a></li>
+          <li><a href="#">About...</a></li>
+        </ul>
+      </div>
+      <div class="footer-credit">
+        <span>Made by Rojan 2022 rojanTech.com</span>
+      </div>
+    </footer>
+    <script src="./movies.js"></script>
+  </body>
+</html>

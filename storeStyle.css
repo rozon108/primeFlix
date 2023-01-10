@@ -1,0 +1,78 @@
+:root {
+  --primary-color: #1de302;
+  --background-color: #222;
+  --secondary-color: #279c03;
+  --secondary2-color: #1b5d01;
+  --secondary3-color: #002e06;
+}
+
+.movies__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  align-items: center;
+}
+
+.movies__header select {
+  border-radius: 4px;
+  height: 40px;
+  padding: 0 12px;
+  width: 100%;
+  max-width: 200px;
+}
+.movies__header select option {
+  font-weight: normal;
+  display: block;
+  white-space: nowrap;
+  min-height: 1.2em;
+  padding: 0px 2px;
+}
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.movie {
+  background-color: var(--secondary3-color);
+  box-sizing: border-box;
+  padding: 1.25rem;
+  width: calc(100 / 3);
+  display: flex;
+  flex-direction: column;
+  margin: 0.25rem 0.5rem;
+}
+
+.movieCover {
+  margin-bottom: 0.5rem;
+}
+.movieCover img {
+}
+
+.primeCredit {
+  display: none;
+  /* display on top right of movie cover */
+}
+
+/* .movie__title {
+  font-size: 1.75rem;
+  
+} */
+.movieDetails {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem 0rem;
+}
+.movieYear {
+  font-size: 1.75rem;
+}
+.movieRuntime {
+  /* bar or maxvalue:250 */
+  background-color: yellow;
+  color: black;
+  height: 1.3rem;
+}
+.moviePrice {
+  font-size: 1.5rem;
+}
