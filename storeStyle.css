@@ -38,11 +38,12 @@
   
 }
 
-.movie {
+.movie{
   background-color: var(--secondary3-color);
   box-sizing: border-box;
-  padding: 1.25rem;
-  width: calc(100 / 3);
+  padding: 1rem;
+  flex: 1 0 25%;
+  /* width: calc(100 / 3); */
   display: flex;
   flex-direction: column;
   margin: 0.25rem 0.5rem;
@@ -106,3 +107,69 @@
     transform: rotate(360deg);
   }
 }
+
+/* when max is 690px or less . min-width when screen is x or wider*/
+@media screen and (max-width: 690px) {
+  .nav_links{
+    display: none;
+  }
+
+  .mFlix-container{
+    padding:0 0.25rem;
+  }
+
+  .movies__header select{
+    max-width: 145px;
+  }
+
+  .movie{
+    padding: 0.5rem;
+  }
+
+}
+
+@media screen and (max-width:690px) and (min-width:400px) {
+  .showcase-top{
+    padding: 0 4.25rem;
+  }
+  
+  
+  .runtimeBar{
+    height: 0.75rem;
+  }
+
+  .movie{
+    flex: 1 0 45%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .showcase-top{
+    padding: 0 2.9rem;
+  }
+  
+  .movies__header{
+    flex-direction: column;
+    align-items: flex-start;
+    gap:0.4rem 0 ;
+  }
+
+  .movies__header select{
+    height: 32px;
+    max-width: 200px;
+  }
+
+  .movies{
+    gap: 0.5rem 0rem;
+  }
+
+  .movie{
+    flex: 1 0 50%;
+    margin: 0.25rem 1.5rem;
+  }
+
+
+}
+
+
+
