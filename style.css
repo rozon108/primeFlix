@@ -44,7 +44,6 @@ img {
   width: 100%;
 }
 section:not(.top-header) {
-    
   border-bottom: 0rem solid var(--secondary3-color);
 }
 .mFlix-container {
@@ -55,9 +54,9 @@ section:not(.top-header) {
   overflow: hidden;
   padding: 0 2rem;
 }
-.ourLogo{
+.ourLogo {
   transform: scale(2);
-  margin:10px;
+  margin: 10px;
 }
 
 /* Landing Page */
@@ -76,9 +75,30 @@ section:not(.top-header) {
   width: 85px;
 }
 
+/* Nav Bar */
+.activeNav {
+  font-weight: bolder;
+}
 .nav_links li {
   display: inline-block;
   margin: 0 0.3rem;
+  position: relative;
+}
+
+.nav_links li:after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  height: 3px;
+  right: 0px;
+  width: 000%;
+  transition: all 500ms ease;
+  background-color: #fff;
+}
+
+.nav_links li:hover:after {
+  width: 100%;
+  right: 0;
 }
 
 /* .showcase-top .user{
@@ -89,31 +109,30 @@ section:not(.top-header) {
 
 /* Top Slider */
 .top-slider {
-    height: auto;
+  height: auto;
 }
-.top-slider div{
-    height: auto;
+.top-slider div {
+  height: auto;
 }
-.top-slider div img{
-    object-fit: cover;
+.top-slider div img {
+  object-fit: cover;
 }
 /* end of top slider */
-.movie-collection{
-    margin-top: 1.2rem;
+.movie-collection {
+  margin-top: 1.2rem;
 }
 
-.some-container{
-    margin-top: 0.4rem;
-    display: grid;
-    grid-template-columns: auto auto auto;
+.some-container {
+  margin-top: 0.4rem;
+  display: grid;
+  grid-template-columns: auto auto auto;
 }
 
-.movie-box img{
-    width: 290px;
-    height: 165px;
+.movie-box img {
+  width: 290px;
+  height: 165px;
 }
 /* end of Content */
-
 
 /* Footer */
 
@@ -132,26 +151,25 @@ footer a {
   display: flex;
   justify-content: space-between;
   gap: 1rem 1rem;
-  flex-wrap:wrap;
-
+  flex-wrap: wrap;
 }
 footer li {
   line-height: 1.9rem;
 }
 .footer-cols ul {
   width: 7.5rem;
-  padding-left:0;
+  padding-left: 0;
 }
 
-.footer-img-box{
+.footer-img-box {
   width: 50%;
-  margin:auto;
+  margin: auto;
   text-align: center;
 }
-footer img{
+footer img {
   width: 90px;
 }
-.footer-credit{
+.footer-credit {
   text-align: center;
 }
 /* --End OF FOOTER */
