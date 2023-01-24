@@ -20,6 +20,7 @@ body {
 
 ul {
   list-style: none;
+  margin-bottom: 0;
 }
 
 h1,
@@ -58,7 +59,14 @@ section:not(.top-header) {
   transform: scale(2);
   margin: 10px;
 }
+.x-scrollable {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
 
+/* custom styles to page */
 /* Landing Page */
 
 .showcase-top {
@@ -85,7 +93,7 @@ section:not(.top-header) {
   position: relative;
 }
 
-.nav_links li:after {
+.nav_links li:nth-child(-n+2):after {
   content: "";
   position: absolute;
   bottom: -3px;
@@ -101,21 +109,31 @@ section:not(.top-header) {
   right: 0;
 }
 
+.nav_links .disabled{
+  color: #999;
+}
+
 /* .showcase-top .user{
     transform: scale(2);
 } */
 
-/* Content */
+/* 
+CONTENTS
+ */
 
 /* Top Slider */
-.top-slider {
+
+/* .top-slider {
   height: auto;
 }
 .top-slider div {
   height: auto;
-}
-.top-slider div img {
+}*/
+/* .top-slider div img {
   object-fit: cover;
+}  */
+.top-slider-img-container {
+  display: flex;
 }
 /* end of top slider */
 .movie-collection {
@@ -219,4 +237,36 @@ footer img {
   padding: 0.8rem 2.1rem;
   text-transform: uppercase;
 }
+
+.vS{
+  text-align: center;
+  margin: 2rem auto;
+  width: 18rem;
+  background-color: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 16px;
+  cursor: pointer;
+}
 /* End of CSS Custom Style */
+
+/* Resopnsive to different screens */
+
+/* Smaller than 690px */
+@media screen and (max-width: 690px) {
+  .nav_links {
+    display: none;
+  }
+}
+
+/* tablet and Smaller */
+@media screen and (max-width: 690px) and (min-width: 400px) {
+  .showcase-top {
+    padding: 0 4.25rem;
+  }
+}
+/* smaller than tablet */
+@media screen and (max-width: 400px) {
+  .showcase-top {
+    padding: 0 2.9rem;
+  }
+}

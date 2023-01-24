@@ -7,23 +7,19 @@
     <title>PrimeFlix</title>
 
     <!-- CSS only -->
-    <!--  Bootsrap
-         <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+    <!--  Bootsrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
-    /> -->
-    <link href="style.css" rel="stylesheet" />
+    />
+    <!-- Custom CSS -->
+    <link href="./assets/styles/style.css" rel="stylesheet" />
+    <!-- End of CSS -->
 
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- JavaScript Bundle with Popper -->
-    <!-- <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-      crossorigin="anonymous"
-    ></script> -->
     <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/f95c23eae3.js"
@@ -33,33 +29,69 @@
   <body>
     <section class="nav-bar top-header">
       <div class="showcase-top">
-        <img src="/assets/mFlix-logo.png" class="ourLogo" alt="" />
+        <a href="./index.html"><img src="/assets/mFlix-logo.png" class="ourLogo" alt="" /></a>
         <ul class="nav_links">
-          <li>Home</li>
-          <li>Store</li>
-          <li>Channels</li>
-          <li>Categories</li>
-          <li>My List</li>
+          <li class="activeNav"><a href="./primeFlix.html">Home</a></li>
+          <li ><a href="./store.html">Store</a></li>
+          <li class="disabled">Channels</li>
+          <li class="disabled">Categories</li>
+          <li class="disabled">My List</li>
         </ul>
         <a
-          href=""
+          href="#"
           class="user"
           data-toggle="tooltip"
           data-placement="left-end"
-          title="Feature Coming Soon... 🫣"
+          title="Feature Coming Soon... "
           ><i class="fa-solid fa-user fa-2x"></i
         ></a>
       </div>
     </section>
     <section class="top-slider">
-      <div class="">
-        <!-- later JS function to auto slide -->
-        <img
-          src="./assets/movie cover/wide-cover/wide-movie-cover1.jpeg"
-          alt=""
-        />
+      <div
+        id="top-slider-carousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="2100"
+        data-bs-pause="hover"
+      >
+        <div class="wide-movie-cover-Indicator carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#top-slider-carousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+          ></button>
+        </div>
+        <div class="wide-movie-cover-Div carousel-inner">
+          <div class="carousel-item active">
+            <img src="./assets/movie cover/wide-cover/wide-movie-cover9.jpeg" />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#top-slider-carousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#top-slider-carousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
       </div>
     </section>
+
+    <br /><br />
+
     <section class="continue-watching movie-collection mFlix-container">
       <h2>continue-watching</h2>
       <div class="some-container">
@@ -77,8 +109,13 @@
         </div>
       </div>
     </section>
+    <a href="./store.html"
+      ><h1 class="vS">
+        Visit Store
+        <i class="fa-solid fa-circle-chevron-right"></i></h1
+    ></a>
     <section class="recommened movie-collection mFlix-container">
-      <h2>recommened</h2>
+      <h2>Recommened</h2>
       <div class="some-container">
         <div class="movie-box">
           <img
@@ -127,7 +164,7 @@
 
     <footer>
       <div class="footer-img-box">
-        <img src="./assets/mFlix-logo.png" class="ourLogo" alt="" />
+        <a href="./index.html"><img src="./assets/mFlix-logo.png" class="ourLogo" alt="" /></a>
       </div>
       <div class="footer-cols">
         <ul>
@@ -147,8 +184,17 @@
           <li><a href="#">About...</a></li>
         </ul>
       </div>
-      <div class="footer-credit"><span>Made by Rojan 2022 rojanTech.com</span></div>
-      
+      <div class="footer-credit">
+        <span>Made by Rojan 2022 rojanTech.com</span>
+      </div>
     </footer>
+    <!-- <script src="./movies.js"></script> -->
+    <script src="./scripts/primeFlix.js"></script>
+    <!-- Bootstrap -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

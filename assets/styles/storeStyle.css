@@ -35,6 +35,7 @@
 .movies {
   display: flex;
   flex-wrap: wrap;
+
   
 }
 
@@ -48,7 +49,7 @@
   margin: 0.25rem 0.5rem;
   display: flex;
   flex-direction: column;
-  flex: 0 30.9%;
+  flex: 0 23.2%;
   justify-content: space-evenly;
 }
 
@@ -113,7 +114,20 @@
   }
 }
 
+@media screen and (min-width:900px){
+  .movies{
+    justify-content: center;
+  }
+}
 /* when max is 690px or less . min-width when screen is x or wider*/
+/* tablet and Smaller */
+@media screen and (max-width:900px){
+  /* movie is 3 in a row or less */
+  .movie{
+    flex: 0 30.9%;
+  }
+}
+
 @media screen and (max-width: 690px) {
   .nav_links{
     display: none;
@@ -133,25 +147,22 @@
 
 }
 
+/* tablet and Smaller */
 @media screen and (max-width:690px) and (min-width:400px) {
-  .showcase-top{
-    padding: 0 4.25rem;
-  }
-  
+ 
   
   .runtimeBar{
     height: 0.75rem;
   }
 
   .movie{
-    flex: 1 0 45%;
+    flex: 0 44%;
   }
 }
 
+/* smaller than tablet */
 @media screen and (max-width: 400px) {
-  .showcase-top{
-    padding: 0 2.9rem;
-  }
+
   
   .movies__header{
     flex-direction: column;
@@ -169,8 +180,8 @@
   }
 
   .movie{
-    flex: 1 0 50%;
-    margin: 0.25rem 1.5rem;
+    flex: 0 44%;
+    
   }
 
 

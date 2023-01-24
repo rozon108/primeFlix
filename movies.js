@@ -2,7 +2,7 @@
 
 // //reference code
 // let books;
-let movies;
+let movies; 
 
 async function renderMovies(filter) {
   //Steps

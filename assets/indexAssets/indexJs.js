@@ -3,6 +3,7 @@ const tabContent = document.querySelectorAll('.tab-content-item');
 
 function selectItem(e){
     console.log(this.id)
+    console.log(this)
     //remove active / bottom border and add to clicked icon
     removeBorder();
     this.classList.add('tab-active')
