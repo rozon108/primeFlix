@@ -105,6 +105,21 @@ function getMovies() {
           posterUrl:
             "https://images-na.ssl-images-amazon.com/images/M/MV5BMGFkNWI4MTMtNGQ0OC00MWVmLTk3MTktOGYxN2Y2YWVkZWE2XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg",
         },
+        
+        {
+          id: 111,
+          title: " second Pulp Fiction",
+          year: "2000",
+          runtime: "154",
+          genres: ["Crime", "Drama"],
+          price: "6.9",
+          primeCredit: true,
+          director: "Quentin Tarantino",
+          actors: "Tim Roth, Amanda Plummer, Laura Lovelace, John Travolta",
+          plot: "The lives of two mob hit men, a boxer, a gangster's wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
+          posterUrl:
+            "https://images-na.ssl-images-amazon.com/images/M/MV5BMTkxMTA5OTAzMl5BMl5BanBnXkFtZTgwNjA5MDc3NjE@._V1_SX300.jpg",
+        },
         {
           id: 144,
           title: "The Hateful Eight",
